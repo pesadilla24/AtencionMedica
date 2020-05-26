@@ -1,0 +1,95 @@
+﻿@model AtencionMedica_v1.Models.Paciente
+
+@{
+    ViewData["Title"] = "Actualización";
+}
+
+<h1>Edit</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Identificacion" class="control-label"></label>
+                <input asp-for="Identificacion" class="form-control" />
+                <span asp-validation-for="Identificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <input asp-for="Sexo" class="form-control" />
+                <span asp-validation-for="Sexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoADN" class="control-label"></label>
+                <input asp-for="CodigoADN" class="form-control" id="valueADN" />
+                <span asp-validation-for="CodigoADN" class="text-danger"></span>
+                <input type="button" value="Validación de ADN" onclick="ADN_Validation()" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Diagnostico" class="control-label"></label>
+                <input asp-for="Diagnostico" class="form-control" />
+                <span asp-validation-for="Diagnostico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoTriageId" class="control-label"></label>
+                <select asp-for="TipoTriageId" class="form-control" asp-items="ViewBag.TipoTriageId"></select>
+                <span asp-validation-for="TipoTriageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        //Here is the custom javascript just for this view.
+
+        function ADN_Validation() {
+            const cadenaVirus = "T,T,C,G,G,A,G,T,A,A,C,A,C,G,C,C,T,A,T,A,G,G,C,G,T,G,T,T,A,C,T,C,C,G,A,A";
+            var valor = document.getElementById("valueADN").value;
+             //var valor =    "A,T,G,O";
+            var pattern = new RegExp('[^ATCG\,]', 'i');
+            var string1 = "abcdekabc";
+
+            if (!pattern.test(valor)) {
+               alert("Cadena ADN correcta");
+            } else {
+                alert("Cadena ADN incorrecta /n Solo puede tener Adenina (A) , Tiamina (T), Citosina (C) y con Guanina (G) ");
+            }
+            if (valor.includes(cadenaVirus)) {
+                alert("Resultado positivo - AISLAMIENTO URGENTE")
+            } else {
+                alert("Resultado Negativo ");
+            }
+        }
+
+
+    </script>
+}

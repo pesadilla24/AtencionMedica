@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "CargaMasiva";
+
+}
+@model List<Consultorio>
+
+<h1>Carga Masiva de consultorios</h1>
+<p>@ViewBag.mensaje</p>
+
+@foreach (var consultorio in Model)
+{
+    <partial name="ConsultorioUnico" model="consultorio" />
+}
+
+@*<form asp-action="CargaMasiva">
+    <div class="form-group">
+        <input type="submit" value="Index" class="btn btn-primary" />
+    </div>
+</form>*@
+
+

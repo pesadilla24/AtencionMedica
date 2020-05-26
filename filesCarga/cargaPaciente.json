@@ -1,0 +1,5 @@
+[ 
+    { "Identificacion":"17145112120", "Nombres":"Luisa Hernandez",    "Edad":"30", "Sexo":"M", "CodigoADN":"T,T,C,G,G,A,G,T,A,A,C,A,C,G,C,C,T,A,T,A,G,G", "Diagnostico":"- " ,"Estado": "1", "TipoTriageId":"1"},
+    { "Identificacion":"17145112122", "Nombres":"Washingtong Torres", "Edad":"30", "Sexo":"M", "CodigoADN":"T,T,C,G,G,A,G,T,A,A,C,A,C,G,C,C,T,A,T,A,G,G", "Diagnostico":"- " ,"Estado": "1", "TipoTriageId":"1"},
+	{ "Identificacion":"17145112123", "Nombres":"Maria Cevallos",     "Edad":"30", "Sexo":"M", "CodigoADN":"T,T,C,G,G,A,G,T,A,A,C,A,C,G,C,C,T,A,T,A,G,A", "Diagnostico":"- " ,"Estado": "1", "TipoTriageId":"1"}
+] 

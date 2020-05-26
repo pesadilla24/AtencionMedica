@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "CargaMasiva";
+
+}
+@model List<Paciente>
+
+<h1>Carga Masiva de consultorios</h1>
+<p>@ViewBag.mensaje</p>
+
+@foreach (var paciente in Model)
+{
+    <partial name="PacienteUnico" model="paciente" />
+}
+
+
+
+
